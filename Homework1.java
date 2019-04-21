@@ -10,6 +10,10 @@ import java.util.Arrays;
  * @version dated April 20, 2019
  */
 
+/* 1. Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
+   2. Написать метод, который преобразует массив в ArrayList;
+   3. Задача про Fruit и Box*/
+
 public class Homework1 {
 
     private <T> void swapElemArr(int firstInd, int secondInd, T[] array) {
@@ -20,6 +24,38 @@ public class Homework1 {
 
     private <T> ArrayList<T> convertArrayToArrayList(T[] array) {
         return new ArrayList<>(Arrays.asList(array));
+    }
+
+    public static void main(String[] args) {
+        Homework1 hw1 = new Homework1();
+        String[] str = {"First", "Second", "Third", "Fourth", "Fifth"};
+        System.out.println("Array str before swap " + Arrays.toString(str));
+
+        hw1.swapElemArr(0, 4, str);
+        System.out.println("Array str after swap " + Arrays.toString(str));
+
+        Double[] dArr = {1.0, 2.0, 3.0, 4.0, 5.0};
+        System.out.println("Array dArr before swap " + Arrays.toString(dArr));
+
+        hw1.swapElemArr(2, 4, dArr);
+        System.out.println("Array dArr after swap " + Arrays.toString(dArr));
+
+        System.out.println(hw1.convertArrayToArrayList(dArr));
+
+        Box<Apple> appleBox = new Box<>();
+        Box<Orange> orangeBox = new Box<>();
+        for (int i = 0; i < 10; i++) {
+            appleBox.addFruit(new Apple());
+            orangeBox.addFruit(new Orange());
+        }
+        System.out.println(appleBox.getFruits());
+        System.out.println(orangeBox.getFruits());
+
+        Box<Apple>appleBox1 = new Box<>();
+        appleBox1.addFruit(new Apple());
+        appleBox.moveToAnotherBox(appleBox1);
+        System.out.println(appleBox.getFruits());
+        System.out.println(appleBox1.getFruits());
     }
 }
 
@@ -86,3 +122,5 @@ class Box<T extends Fruit>{
         return fruits;
     }
 }
+
+
