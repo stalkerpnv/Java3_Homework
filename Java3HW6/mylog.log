@@ -1,0 +1,8 @@
+мая 16, 2019 8:33:46 PM server.Server <init>
+INFO: Server is running
+мая 16, 2019 8:38:33 PM server.Server <init>
+INFO: Client is connected
+мая 16, 2019 8:38:39 PM server.Server broadcastMsg
+SEVERE: Client sent the messageadmin: 2323
+мая 16, 2019 8:38:42 PM server.Server broadcastMsg
+SEVERE: Client sent the messageadmin: 123
